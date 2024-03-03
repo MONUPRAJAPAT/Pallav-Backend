@@ -7,7 +7,6 @@ const reviewRoute = require("./routes/reviewRoute.js");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-const Port = process.env.Port || 5000;
 
 const app = express();
 app.use(cors());
@@ -35,8 +34,8 @@ mongoose
     "mongodb+srv://pallavsingh07:pallavsingh07@cluster0.sf3fvsx.mongodb.net/Cluster0"
   )
   .then(() => {
-    app.listen(Port, () => {
-      console.log(`Node Js Server started at Port:${Port}`);
+    app.listen(5000, () => {
+      console.log(`Node Js Server started at Port:5000`);
     });
   })
   .catch((err) => {
