@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const cartRoute = require('./routes/cartRoute.js');
 const historyRoute = require('./routes/historyRoute.js');
 const reviewRoute = require('./routes/reviewRoute.js');
+const dotenv = require('dotenv');
+
+const Port = process.env.Port || 5000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,4 +22,4 @@ app.use('/Cart', cartRoute);
 app.use('/History', historyRoute);
 app.use('/Main', reviewRoute);
 
-mongoose.connect('mongodb+srv://pallavsingh07:pallavsingh07@cluster0.sf3fvsx.mongodb.net/Cluster0').then(() => { app.listen(5000) }).catch(err => { console.log(err) })
+mongoose.connect('mongodb+srv://pallavsingh07:pallavsingh07@cluster0.sf3fvsx.mongodb.net/Cluster0').then(() => { app.listen(Port) }).catch(err => { console.log(err) })
